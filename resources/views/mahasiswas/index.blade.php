@@ -20,6 +20,7 @@
                                     <span class="fas fa-search">Search</span>
                                 </button>
                             </span>
+
                             <input type="text" class="form-control mr-2" name="term" placeholder="Search Nama Mahasiswa" id="term">
                             <a href="{{ route('mahasiswas.index') }}" class=" mt-1">
                                 <span class="input-group-btn">
