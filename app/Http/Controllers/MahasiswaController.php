@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
 {
@@ -19,8 +18,7 @@ class MahasiswaController extends Controller
         // $mahasiswas = Mahasiswa::all(); // Mengambil semua isi tabel
         // $post = Mahasiswa::orderBy('Nim', 'desc')->paginate(6);
         // return view('mahasiswas.index', compact('mahasiswas'));
-        // with('i', (request()->input('page', 1) - 1) * 5);
-        $mahasiswas1 = DB::table('mahasiswas')->simplePaginate(5);	
+        // with('i', (request()->input('page', 1) - 1) * 5);	
         $mahasiswas = Mahasiswa::where([
             ['Nama','!=',Null],
             [function($query)use($request){
@@ -30,7 +28,7 @@ class MahasiswaController extends Controller
             }]
         ])
         ->orderBy('Nim','desc')
-        ->paginate(5);
+        ->simplePaginate(5);
         
         return view('mahasiswas.index' , compact('mahasiswas'))
         ->with('i',(request()->input('page',1)-1)*5);
