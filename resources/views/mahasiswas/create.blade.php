@@ -34,7 +34,7 @@
 
                         <div class="form-group">
                             <label for="Kelas">Kelas</label> 
-                            <input type="Kelas" name="Kelas" class="form-control" id="Kelas" aria-describedby="password" >
+                            <input type="Kelas" name="Kelas" class="form-control" id="Kelas" aria-describedby="Kelas" >
                         </div>
 
                         <div class="form-group">
